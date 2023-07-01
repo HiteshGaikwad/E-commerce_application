@@ -24,33 +24,23 @@ signup_btn.addEventListener("click",()=>{
 const url= "https://fakestoreapi.com/products";
 
 const all_filter= document.getElementById("all-filter")
+const main_section= document.getElementById("main-section-id");
 
 let mens_collection=[];
   let womens_collectons=[];
   let jewellery_collection=[];
   let electronic_collection=[];
 
-  const mens=document.getElementById("mens_id");
-  const women= document.getElementById("womens_id");
-  const jewellery= document.getElementById("jewellery_id");
-  const electronic= document.getElementById("electronic_id");
+
+  all_filter.addEventListener("click",allCollections)
+
 
 async function loadData(){
+
 
   all_filter.style.backgroundColor="black";
   all_filter.style.color="white";
 
-  men_filter.style.backgroundColor="white";
-  men_filter.style.color="black";
-
-  women_filter.style.backgroundColor="white"
-  women_filter.style.color="black"
-
-  jewellery_filter.style.backgroundColor="white"
-  jewellery_filter.style.color="black"
-
-electronic_filter.style.backgroundColor="white";
-electronic_filter.style.color="black";
 
   try{
   let response= await fetch(url);
@@ -69,11 +59,44 @@ electronic_filter.style.color="black";
     }
   }
 
+  allCollections();
+
+    }
+  catch(error){
+    alert("Something went wrong");
+    console.trace(error)
+  }
+}
+
+function allCollections(){
+
+  all_filter.style.backgroundColor="black";
+  all_filter.style.color="white";
+
+  men_filter.style.backgroundColor="white";
+  men_filter.style.color="black";
+
+  women_filter.style.backgroundColor="white"
+  women_filter.style.color="black"
+
+  jewellery_filter.style.backgroundColor="white"
+  jewellery_filter.style.color="black"
+
+electronic_filter.style.backgroundColor="white";
+electronic_filter.style.color="black";
+
+  main_section.innerHTML=" ";
+
   //mens collection
+
+  let men_section= document.createElement("section");
+  men_section.className="mens";
+  men_section.id="mens_id";
+
   let title= document.createElement("div");
   title.className="title";
   title.innerText=`${mens_collection[0].category}`;
-  mens.append(title);
+  men_section.append(title);
 
 
   let items= document.createElement("div");
@@ -109,13 +132,18 @@ electronic_filter.style.color="black";
       items.append(item);
     }
     
-      mens.append(items);
+      men_section.append(items);
+      main_section.append(men_section)
 
       //womens collections
+      let women_section= document.createElement("section");
+        women_section.className="womens";
+        women_section.id="womens_id";
+
       let women_title= document.createElement("div");
   women_title.className="title";
   women_title.innerText=`${womens_collectons[0].category}`;
-  women.append(women_title);
+  women_section.append(women_title);
 
   let women_items= document.createElement("div");
     women_items.className="items";
@@ -150,14 +178,20 @@ electronic_filter.style.color="black";
       women_items.append(item);
     }
     
-      women.append(women_items);
+      // women.append(women_items);
+      women_section.append(women_items);
+      main_section.append(women_section)
 
 
     //Jewellery collections
+    let jewellery_section= document.createElement("section");
+    jewellery_section.className="jewellery";
+    jewellery_section.id="jewellery_id";
+    
     let jewellery_title= document.createElement("div");
     jewellery_title.className="title";
     jewellery_title.innerText=`${jewellery_collection[0].category}`;
-  jewellery.append(jewellery_title);
+    jewellery_section.append(jewellery_title);
 
   let jewellery_items= document.createElement("div");
   jewellery_items.className="items";
@@ -192,13 +226,19 @@ electronic_filter.style.color="black";
       jewellery_items.append(item);
     }
     
-      jewellery.append(jewellery_items);
+    jewellery_section.append(jewellery_items);
+    main_section.append(jewellery_section);
 
       //Electronic collections
+
+      let electronic_section= document.createElement("section");
+      electronic_section.className="electronic";
+      electronic_section.id="electronic_id";
+
       let electronic_title= document.createElement("div");
       electronic_title.className="title";
       electronic_title.innerText=`${electronic_collection[0].category}`;
-  electronic.append(electronic_title);
+      electronic_section.append(electronic_title);
 
   let electronic_items= document.createElement("div");
     electronic_items.className="items";
@@ -233,15 +273,11 @@ electronic_filter.style.color="black";
       electronic_items.append(item);
     }
     
-      electronic.append(electronic_items);
+    electronic_section.append(electronic_items);
+    main_section.append(electronic_section);
 
-    }
-  catch(error){
-    alert("Something went wrong");
-  }
 }
 
-const main_section= document.getElementById("main-section-id");
 
 
 const men_filter= document.getElementById("men-filter");
