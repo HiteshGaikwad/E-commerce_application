@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 60px;
+    align-items: center;
+}
+.nav-right-side {
+    margin: 10px 25px;
+}
+.nav-right-side > h2{
+    color: grey;
+
+}
+.nav-left-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 50px;
+    gap: 20px;
+}
+.nav-btn {
+    color: rgb(100,100,100);
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+}
+
+/* main section */
+form {
+    margin: 0 50px ;
+}
+.inputs {
+    width: 100%;
+    height: 30px;
+    margin: 7px 0;
+    padding: 5px 10px;
+    color: black;
+}
+input::placeholder {
+    font-weight: bold;
+    opacity: 0.8;
+}
+#loginBtn {
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    margin-top: 10px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,600;0,900;1,500&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+<style>
+    *{
+        font-family: 'Inter', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+    }
+</style>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <div class="nav-right-side">
+            <h2>Shopping Cart</h2>
+        </div>
+    </nav>
+
+    <section class="main-section">
+        <div class="first-container">
+            <p class="heading-center">My Profile</p>
+            <div class="info">
+                <div><input type="text" class="input" id="fname" placeholder="First Name"></div>
+                <br>
+                <div><input type="text" class="input" id="lname" placeholder="Last Name"></div>
+            </div>
+            <button class="btn" id="save_info">Save Info</button>
+        </div>
+
+        <div class="second-container">
+            <p class="heading-center">Edit Password</p>
+            <div class="info">
+                <div><input type="password" class="input" id="old_password" placeholder="Old Password"></div>
+                <br>
+                <div><input type="password" class="input" id="new_password" placeholder="New Password"></div>
+                <br>
+                <div><input type="password" class="input" id="confirm_password" placeholder="Confirm Password"></div>
+            </div>
+            <div> <button class="btn" id="change_password">Change Password</button></div>
+           <div><button class="btn" id="log_out">Logout</button></div>
+            
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
